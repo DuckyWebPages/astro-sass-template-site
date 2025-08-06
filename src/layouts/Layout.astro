@@ -9,57 +9,48 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="stylesheet" href="/styles/global.css" />
+    <style>
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-family: sans-serif;
+        padding: 1rem 0;
+        background-color: #003366; /* Deep blue */
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        position: relative;
+        font-weight: 500;
+        padding: 0 0.5rem;
+      }
+
+      nav a:not(:last-child)::after {
+        content: "|";
+        color: white;
+        margin-left: 0.5rem;
+      }
+
+      nav a:hover {
+        text-decoration: underline;
+      }
+    </style>
   </head>
 
   <body>
     <header>
- <nav>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
-  <a href="/research">Research</a>
-  <a href="/supportothers">Health Help</a>
-  <a href="/testimonials">Testimonials</a>
-  <a href="/thirdworld">3rd World Help</a>
-  <a href="/contact">Contact</a>
-</nav>
-
-<style>
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    font-family: sans-serif;
-    padding: 1rem 0;
-    background-color: #003366; /* Deep blue */
-  }
-
-  nav a {
-    color: white;
-    text-decoration: none;
-    position: relative;
-    font-weight: 500;
-    padding-right: 1rem;
-  }
-
-  nav a:not(:last-child)::after {
-    content: "|";
-    color: white;
-    position: absolute;
-    right: -0.8rem;
-    top: 0;
-  }
-
-  nav a:hover {
-    text-decoration: underline;
-  }
-</style>
-
-
-
-
-
-
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/research">Research</a>
+        <a href="/supportothers">Health Help</a>
+        <a href="/testimonials">Testimonials</a>
+        <a href="/thirdworld">3rd World Help</a>
+        <a href="/contact">Contact</a>
+      </nav>
     </header>
 
     <main>
