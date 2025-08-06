@@ -18,13 +18,14 @@ const { title } = Astro.props;
         font-family: sans-serif;
         padding: 1rem 0;
         background-color: #003366; /* Deep blue */
+        position: relative;
       }
 
       nav a {
         color: white;
         text-decoration: none;
-        position: relative;
         font-weight: 500;
+        position: relative;
         padding: 0 0.5rem;
       }
 
@@ -37,6 +38,51 @@ const { title } = Astro.props;
       nav a:hover {
         text-decoration: underline;
       }
+
+      /* Dropdown styles */
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 2.8rem;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #003366;
+        min-width: 250px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        border-radius: 4px;
+      }
+
+      .dropdown-content a {
+        display: block;
+        padding: 0.75rem 1rem;
+        text-align: left;
+        white-space: nowrap;
+        border-bottom: 1px solid #0055aa;
+      }
+
+      .dropdown-content a:last-child {
+        border-bottom: none;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #0055aa;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+
+      .dropdown > a::after {
+        content: " ▾";
+        font-size: 0.75rem;
+        margin-left: 0.25rem;
+      }
     </style>
   </head>
 
@@ -45,7 +91,22 @@ const { title } = Astro.props;
       <nav>
         <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="/research">Research</a>
+
+        <div class="dropdown">
+          <a href="/research">Research</a>
+          <div class="dropdown-content">
+            <a href="/research/immune-support">Natural Immune System Support</a>
+            <a href="/research/flax-hull-lignans">Science of Flax Hull Lignans</a>
+            <a href="/research/vaccine-detox">Vaccine Detox Research</a>
+            <a href="/research/zeolite">Zeolite Science</a>
+            <a href="/research/essential-oils">Essential Oil Research</a>
+            <a href="/research/enzymes">Enzyme Research</a>
+            <a href="/research/longevity">Longevity Research</a>
+            <a href="/research/cancer">Cancer Research</a>
+            <a href="/research/detoxification">Detoxification Research</a>
+          </div>
+        </div>
+
         <a href="/supportothers">Health Help</a>
         <a href="/testimonials">Testimonials</a>
         <a href="/thirdworld">3rd World Help</a>
