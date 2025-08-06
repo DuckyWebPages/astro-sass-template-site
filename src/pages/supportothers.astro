@@ -2,34 +2,115 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Support Others">
+<Layout title="We Support Others">
   <div class="page-container">
-    <h1>Support Others</h1>
-    <p>Here at ARAI, we want to support those looking for natural health options for their health...</p>
-    <p>We have a wait list for people looking for scholarships and/or matching support to purchase protocols listed on our website. If you would like to join the waitlist, we ask that you or the person you are filling this out for is definitely on board for trying the protocol, and that you are willing to come up with or raise half of the amount needed. We will provide you with a payment link where you, friends and family can donate, if you wish. Protocols are designed for three month time frames. We are able to get a discount and provide it to you at our cost. </p>
-    
+    <h1>We Support Others</h1>
+    <p>
+      At ARAI, we are passionate about helping people facing serious health challenges.
+      Our mission is to provide natural, research-based protocols to those in need—
+      especially when finances are a barrier.
+    </p>
+
+    <p>
+      We maintain a waitlist for individuals who would like to try a health protocol but need partial
+      financial support. If you’re ready to commit to a protocol and can raise half the cost, we’ll help
+      with the rest. We’ll even provide you with a link to gather support from friends and family.
+    </p>
+
+    <p>
+      Protocols typically last 12 weeks, and we ask that participants check in every two weeks and
+      submit a final report at the end of the study period.
+    </p>
+
     <form class="support-form">
-      <label>Name:<br /><input type="text" name="name" required /></label><br />
-      <label>Address:<br /><input type="text" name="address" required /></label><br />
-      <label>Phone Number:<br /><input type="text" name="phone" required /></label><br />
-      <label>Official Diagnosis from a doctor:<br /><input type="text" name="diagnosis" required /></label><br />
-      <label>Current treatment status:<br /><input type="text" name="treatmentStatus" /></label><br />
-      <label>What is your prognosis currently?<br /><input type="text" name="prognosis" /></label><br />
-      <label>What protocol would you like to try?<br /><input type="text" name="protocol" /></label><br />
-      <label>Are you willing to report back to us every two weeks with an email?<br />
+      <label>
+        Name:<br />
+        <input type="text" name="name" required />
+      </label>
+
+      <label>
+        Address:<br />
+        <input type="text" name="address" required />
+      </label>
+
+      <label>
+        Phone Number:<br />
+        <input type="text" name="phone" required />
+      </label>
+
+      <label>
+        Official Diagnosis from a Doctor:<br />
+        <input type="text" name="diagnosis" required />
+      </label>
+
+      <label>
+        Current Treatment Status:<br />
+        <input type="text" name="treatmentStatus" />
+      </label>
+
+      <label>
+        What is your prognosis currently?<br />
+        <input type="text" name="prognosis" />
+      </label>
+
+      <label>
+        What protocol would you like to try?<br />
+        <input type="text" name="protocol" />
+      </label>
+
+      <label>
+        Are you willing to report back every two weeks via email?<br />
         <select name="biweeklyUpdate" required>
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
-      </label><br />
-      <label>At the end of the 12 week study are you willing to report results via an online form?<br />
+      </label>
+
+      <label>
+        At the end of the 12-week study, are you willing to report results online?<br />
         <select name="finalReport" required>
           <option value="yes">Yes</option>
           <option value="no">No</option>
         </select>
-      </label><br />
+      </label>
+
       <button type="submit">Submit</button>
     </form>
   </div>
-</Layout>
 
+  <style>
+    .page-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 2rem;
+      font-family: sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    .support-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .support-form label {
+      font-weight: 500;
+    }
+
+    .support-form input,
+    .support-form select {
+      padding: 0.5rem;
+      font-size: 1rem;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 4px;
