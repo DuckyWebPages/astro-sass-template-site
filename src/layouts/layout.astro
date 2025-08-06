@@ -1,0 +1,75 @@
+---
+import "../styles/global.css";  // ✅ This is the correct way
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <link rel="stylesheet" href="/styles/global.css" />  <!-- ✅ RIGHT WAY -->
+  </head>
+
+  <body>
+   <style>
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown-content a {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    color: black;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #eee;
+  }
+</style>
+
+<nav>
+  <a href="/">Home</a> |
+  <a href="/about">About</a> |
+  <a href="/contact">Contact</a> |
+  
+  <div class="dropdown">
+    <a href="/research">Research ▾</a>
+    <div class="dropdown-content">
+      <a href="/research/study1">Study 1</a>
+      <a href="/research/study2">Study 2</a>
+      <a href="/research/study3">Study 3</a>
+      <a href="/research/study4">Study 4</a>
+      <a href="/research/study5">Study 5</a>
+    </div>
+  </div>
+
+  |
+  <a href="/supportothers">Support Others</a> |
+  <a href="/testimonials">Testimonials</a>
+</nav>
+
+    <hr />
+
+    <slot />
+  </body>
+</html>

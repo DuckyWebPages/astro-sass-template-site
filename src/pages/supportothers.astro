@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Support Others">
+  <div class="page-container">
+    <h1>Support Others</h1>
+    <p>Here at ARAI, we want to support those looking for natural health options for their health...</p>
+    <p>We have a wait list for people looking for scholarships and/or matching support to purchase protocols listed on our website. If you would like to join the waitlist, we ask that you or the person you are filling this out for is definitely on board for trying the protocol, and that you are willing to come up with or raise half of the amount needed. We will provide you with a payment link where you, friends and family can donate, if you wish. Protocols are designed for three month time frames. We are able to get a discount and provide it to you at our cost. </p>
+    
+    <form class="support-form">
+      <label>Name:<br /><input type="text" name="name" required /></label><br />
+      <label>Address:<br /><input type="text" name="address" required /></label><br />
+      <label>Phone Number:<br /><input type="text" name="phone" required /></label><br />
+      <label>Official Diagnosis from a doctor:<br /><input type="text" name="diagnosis" required /></label><br />
+      <label>Current treatment status:<br /><input type="text" name="treatmentStatus" /></label><br />
+      <label>What is your prognosis currently?<br /><input type="text" name="prognosis" /></label><br />
+      <label>What protocol would you like to try?<br /><input type="text" name="protocol" /></label><br />
+      <label>Are you willing to report back to us every two weeks with an email?<br />
+        <select name="biweeklyUpdate" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label><br />
+      <label>At the end of the 12 week study are you willing to report results via an online form?<br />
+        <select name="finalReport" required>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </label><br />
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</Layout>
+
