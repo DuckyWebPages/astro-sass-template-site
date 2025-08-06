@@ -10,91 +10,101 @@ const { title } = Astro.props;
     <title>{title}</title>
     <link rel="stylesheet" href="/styles/global.css" />
     <style>
-  nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    font-family: sans-serif;
-    padding: 1rem 0;
-    background-color: #003366; /* Deep blue */
-    position: relative;
-  }
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-family: sans-serif;
+        padding: 1rem 0;
+        background-color: #003366; /* Deep blue */
+        position: relative;
+      }
 
-  nav a {
-    color: white;
-    text-decoration: none;
-    position: relative;
-    font-weight: 500;
-    padding: 0 0.5rem;
-  }
+      nav a {
+        color: white;
+        text-decoration: none;
+        position: relative;
+        font-weight: 500;
+        padding: 0 0.5rem;
+      }
 
-  nav a:not(:last-child)::after {
-    content: "|";
-    color: white;
-    margin-left: 0.5rem;
-  }
+      nav a:not(:last-child)::after {
+        content: "|";
+        color: white;
+        margin-left: 0.5rem;
+      }
 
-  nav .dropdown {
-    position: relative;
-    display: inline-block;
-  }
+      nav a:hover {
+        text-decoration: underline;
+      }
 
-  nav .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #003366;
-    padding: 0.5rem;
-    z-index: 1;
-    flex-direction: column;
-  }
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
 
-  nav .dropdown:hover .dropdown-content {
-    display: flex;
-  }
+      .dropbtn {
+        color: white;
+        text-decoration: none;
+        padding: 0 0.5rem;
+        font-weight: 500;
+      }
 
-  nav .dropdown-content a {
-    padding: 0.25rem 0;
-    color: white;
-  }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #004080; /* darker blue */
+        min-width: 240px;
+        box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+        z-index: 1;
+        top: 100%;
+        left: 0;
+      }
 
-  nav a:hover,
-  nav .dropdown-content a:hover {
-    text-decoration: underline;
-  }
-</style>
+      .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
 
+      .dropdown-content a:hover {
+        background-color: #0059b3;
+      }
+
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+    </style>
   </head>
 
   <body>
     <header>
       <nav>
-  <a href="/">Home</a>
-  <a href="/about">About</a>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
 
-  <div class="dropdown">
-    <a href="/research" class="dropbtn">Research</a>
-    <div class="dropdown-content">
-      <a href="/research/Natural-Immune-System-Support">Natural Immune System Support</a>
-      <a href="/research/Science-of-Flax-Hull-Lignans">Science of Flax Hull Lignans</a>
-      <a href="/research/Vaccine-Detox-Research">Vaccine Detox Research</a>
-      <a href="/research/Zeolite-Research">Zeolite Science</a>
-      <a href="/research/Essential-Oil-Research">Essential Oil Research</a>
-      <a href="/research/Enzyme-Research">Enzyme Research</a>
-      <a href="/research/Longevity-Research">Longevity Research</a>
-      <a href="/research/Cancer-Research">Cancer Research</a>
-      <a href="/research/Detoxification-Research">Detoxification Research</a>
-    </div>
-  </div>
+        <div class="dropdown">
+          <a href="/research" class="dropbtn">Research</a>
+          <div class="dropdown-content">
+            <a href="/research/Natural-Immune-System-Support">Natural Immune System Support</a>
+            <a href="/research/Science-of-Flax-Hull-Lignans">Science of Flax Hull Lignans</a>
+            <a href="/research/Vaccine-Detox-Research">Vaccine Detox Research</a>
+            <a href="/research/Zeolite-Research">Zeolite Science</a>
+            <a href="/research/Essential-Oil-Research">Essential Oil Research</a>
+            <a href="/research/Enzyme-Research">Enzyme Research</a>
+            <a href="/research/Longevity-Research">Longevity Research</a>
+            <a href="/research/Cancer-Research">Cancer Research</a>
+            <a href="/research/Detoxification-Research">Detoxification Research</a>
+          </div>
+        </div>
 
-  <a href="/supportothers">Health Help</a>
-  <a href="/testimonials">Testimonials</a>
-  <a href="/thirdworld">3rd World Help</a>
-  <a href="/contact">Contact</a>
-</nav>
-
+        <a href="/supportothers">Health Help</a>
+        <a href="/testimonials">Testimonials</a>
+        <a href="/thirdworld">3rd World Help</a>
+        <a href="/contact">Contact</a>
+      </nav>
     </header>
 
     <main>
