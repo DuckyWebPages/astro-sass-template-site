@@ -146,3 +146,7 @@ blockquote {
 .dropdown-menu a:hover {
   background-color: #0059b3;
 }
+
+.testimonial {
+  text-align: left;
+}
