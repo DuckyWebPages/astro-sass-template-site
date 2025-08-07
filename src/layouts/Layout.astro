@@ -53,11 +53,10 @@ const { title } = Astro.props;
 
       .dropbtn {
         color: white;
-        text-decoration: none;
         font-weight: 500;
         padding: 0.5rem 0.75rem;
         cursor: pointer;
-        display: inline-block;
+        background: none;
       }
 
       .dropdown-menu {
@@ -84,8 +83,7 @@ const { title } = Astro.props;
         background-color: #0059b3;
       }
 
-      .dropdown-container:hover .dropdown-menu,
-      .dropdown-menu:hover {
+      .dropdown-container:hover .dropdown-menu {
         display: block;
       }
 
@@ -138,8 +136,6 @@ const { title } = Astro.props;
           display: flex;
         }
 
-      
-
         .mobile-dropdown-toggle:hover + .mobile-dropdown,
         .mobile-dropdown:hover {
           display: flex;
@@ -173,8 +169,9 @@ const { title } = Astro.props;
             <a href="/">Home</a>
             <a href="/about">About</a>
 
+            <!-- ✅ FIXED DROPDOWN -->
             <div class="dropdown-container">
-              <a href="/research" class="dropbtn">Research ▾</a>
+              <div class="dropbtn">Research ▾</div>
               <div class="dropdown-menu">
                 <a href="/research/Natural-Immune-System-Support">Natural Immune System Support</a>
                 <a href="/research/Science-of-Flax-Hull-Lignans">Science of Flax Hull Lignans</a>
@@ -229,4 +226,3 @@ const { title } = Astro.props;
     </footer>
   </body>
 </html>
-
