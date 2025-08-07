@@ -171,19 +171,20 @@ const { title } = Astro.props;
 
             <!-- ✅ FIXED DROPDOWN -->
             <div class="dropdown-container">
-              <div class="dropbtn">Research ▾</div>
-              <div class="dropdown-menu">
-                <a href="/research/Natural-Immune-System-Support">Natural Immune System Support</a>
-                <a href="/research/Science-of-Flax-Hull-Lignans">Science of Flax Hull Lignans</a>
-                <a href="/research/Vaccine-Detox-Research">Vaccine Detox Research</a>
-                <a href="/research/Zeolite-Research">Zeolite Science</a>
-                <a href="/research/Essential-Oil-Research">Essential Oil Research</a>
-                <a href="/research/Enzyme-Research">Enzyme Research</a>
-                <a href="/research/Longevity-Research">Longevity Research</a>
-                <a href="/research/Cancer-Research">Cancer Research</a>
-                <a href="/research/Detoxification-Research">Detoxification Research</a>
-              </div>
-            </div>
+  <a href="javascript:void(0);" class="dropbtn" onclick="toggleDropdown()">Research ▾</a>
+  <div class="dropdown-menu" id="desktopDropdown">
+    <a href="/research/Natural-Immune-System-Support">Natural Immune System Support</a>
+    <a href="/research/Science-of-Flax-Hull-Lignans">Science of Flax Hull Lignans</a>
+    <a href="/research/Vaccine-Detox-Research">Vaccine Detox Research</a>
+    <a href="/research/Zeolite-Research">Zeolite Science</a>
+    <a href="/research/Essential-Oil-Research">Essential Oil Research</a>
+    <a href="/research/Enzyme-Research">Enzyme Research</a>
+    <a href="/research/Longevity-Research">Longevity Research</a>
+    <a href="/research/Cancer-Research">Cancer Research</a>
+    <a href="/research/Detoxification-Research">Detoxification Research</a>
+  </div>
+</div>
+
 
             <a href="/supportothers">Health Help</a>
             <a href="/testimonials">Testimonials</a>
@@ -226,3 +227,19 @@ const { title } = Astro.props;
     </footer>
   </body>
 </html>
+<script>
+  function toggleDropdown() {
+    const menu = document.getElementById("desktopDropdown");
+    menu.style.display = menu.style.display === "block" ? "none" : "block";
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (event) {
+    const menu = document.getElementById("desktopDropdown");
+    const button = document.querySelector(".dropbtn");
+
+    if (!menu.contains(event.target) && !button.contains(event.target)) {
+      menu.style.display = "none";
+    }
+  });
+</script>
