@@ -49,6 +49,7 @@ import Layout from '../../layouts/Layout.astro';
       <li>This protocol may need to be maintained for months or even years depending on the severity of the autoimmune condition.</li>
       <li>Use only <strong>pure, unadulterated essential oils</strong> that are distilled in surgical stainless steel with no added chemicals.</li>
     </ul>
+<!-- Test change to trigger Git -->
 
     <p>
       We exclusively recommend <strong>Young Living Essential Oils</strong> for this protocol due to their Seed to Seal® purity guarantee and rigorous testing standards.
@@ -59,9 +60,15 @@ import Layout from '../../layouts/Layout.astro';
     </p>
 
     <h2>Clinical Trial Announcement</h2>
-    <p>
-      We are currently <strong>co-sponsoring a clinical trial</strong> to explore the effectiveness of the Raindrop Technique in supporting individuals with autoimmune diseases. Stay tuned for published data and outcomes.
-    </p>
+    <section class="trial-announcement">
+      <img src="/images/CLINICALTRIAL.jpg" alt="Clinical Trial Banner" class="trial-image" />
+      <div class="trial-text">
+        <h3>We Are Sponsoring a Clinical Trial!</h3>
+        <p>
+          We are currently <strong>co-sponsoring a clinical trial</strong> to explore the effectiveness of the Raindrop Technique in supporting individuals with autoimmune diseases. Stay tuned for published data and outcomes.
+        </p>
+      </div>
+    </section>
 
     <h2>Additional Supportive Measures</h2>
     <p>
@@ -72,23 +79,69 @@ import Layout from '../../layouts/Layout.astro';
       Disclaimer: This protocol is provided for educational purposes only and is not a substitute for medical advice. Please consult a qualified healthcare provider for personal medical decisions.
     </p>
 
-<section style="margin-top: 2rem; border-left: 6px solid #00785A; background-color: #F3FFFA; padding: 1rem;">
-  <h2 style="margin-top: 0;">🔍 Find a Certified Raindrop Technician</h2>
-  <p>
-    If you’d like to receive a professional Raindrop Technique session, you can search the official CARE directory to find a certified practitioner near you.
-  </p>
-  <p>
-    👉 <a href="https://raindroptraining.com/practitioners" target="_blank" rel="noopener noreferrer" style="color: #00785A; font-weight: bold;">Browse the CARE Certified Raindrop Directory</a>
-  </p>
-  <p>
-    Alternatively, if you're interested in learning how to give Raindrops to your family or community, we recommend the book:
-    <a href="https://growinghealthyhomes.com/the-power-of-a-raindrop/?searchid=0&search_query=Raindrop%5C" target="_blank" rel="noopener noreferrer" style="font-weight: bold; color: #00785A;">
-      <em>The Power of a Raindrop</em>
-    </a>. It’s a great guide for understanding and applying the technique safely and effectively.
-  </p>
-</section>
-
-
-
+    <section style="margin-top: 2rem; border-left: 6px solid #00785A; background-color: #F3FFFA; padding: 1rem;">
+      <h2 style="margin-top: 0;">🔍 Find a Certified Raindrop Technician</h2>
+      <p>
+        If you’d like to receive a professional Raindrop Technique session, you can search the official CARE directory to find a certified practitioner near you.
+      </p>
+      <p>
+        👉 <a href="https://raindroptraining.com/practitioners" target="_blank" rel="noopener noreferrer" style="color: #00785A; font-weight: bold;">Browse the CARE Certified Raindrop Directory</a>
+      </p>
+      <p>
+        Alternatively, if you're interested in learning how to give Raindrops to your family or community, we recommend the book:
+        <a href="https://growinghealthyhomes.com/the-power-of-a-raindrop/?searchid=0&search_query=Raindrop%5C" target="_blank" rel="noopener noreferrer" style="font-weight: bold; color: #00785A;">
+          <em>The Power of a Raindrop</em>
+        </a>. It’s a great guide for understanding and applying the technique safely and effectively.
+      </p>
+    </section>
   </section>
 </Layout>
+
+<style>
+  .trial-announcement {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f7ff;
+    border: 1px solid #ccddee;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 10px;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .trial-image {
+    width: 307px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .trial-text {
+    max-width: 500px;
+  }
+
+  .trial-text h3 {
+    color: #004080;
+    margin-bottom: 0.5rem;
+  }
+
+  .trial-text p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .trial-announcement {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .trial-text {
+      max-width: 100%;
+    }
+  }
+</style>
+<!-- Forcing Git to recognize this change ttt-->
