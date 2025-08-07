@@ -60,15 +60,49 @@ import Layout from '../../layouts/Layout.astro';
     </p>
 
     <h2>Clinical Trial Announcement</h2>
-    <section class="trial-announcement">
-      <img src="/images/CLINICALTRIAL.jpg" alt="Clinical Trial Banner" class="trial-image" />
-      <div class="trial-text">
-        <h3>We Are Sponsoring a Clinical Trial!</h3>
-        <p>
-          We are currently <strong>co-sponsoring a clinical trial</strong> to explore the effectiveness of the Raindrop Technique in supporting individuals with autoimmune diseases. Stay tuned for published data and outcomes.
-        </p>
-      </div>
-    </section>
+<section class="trial-announcement">
+  <img src="/CLINICALTRIAL.jpg" alt="Clinical Trial Banner" class="trial-image" />
+  <div class="trial-text">
+    <h3>We Are Sponsoring a Clinical Trial!</h3>
+    <p>
+      We are currently <strong>co-sponsoring a clinical trial</strong> to explore the effectiveness of the Raindrop Technique in supporting individuals with autoimmune diseases. Stay tuned for published data and outcomes.
+    </p>
+  </div>
+</section>
+
+<style>
+  .trial-announcement {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap; /* Makes it responsive on smaller screens */
+  }
+
+  .trial-image {
+    width: 20%; /* 1/5th of the full width */
+    min-width: 150px; /* Prevents it from getting too small on mobile */
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .trial-text {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 768px) {
+    .trial-announcement {
+      flex-direction: column;
+    }
+
+    .trial-image {
+      width: 100%;
+    }
+  }
+</style>
+
 
     <h2>Additional Supportive Measures</h2>
     <p>
