@@ -1,24 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-
 ---
 
 <Layout title="Natural Health Protocols">
-    <section class="page-container">
-        <h1>Natural Health Protocols</h1>
-        <p>
-            This section provides protocols for supporting the body through various health challenges using natural methods.
-            Each protocol has been designed with research-based support, experience, and safety in mind.
-        </p>
-<!-- Triggering Git to see this file as changed -->
+  <section class="page-container">
+    <h1>Natural Health Protocols</h1>
+    <p>
+      This section provides protocols for supporting the body through various health challenges using natural methods.
+      Each protocol has been designed with research-based support, experience, and safety in mind.
+    </p>
+    <!-- Triggering Git to see this file as changed -->
 
-        <ul>
-            <li><a href="/protocols/cancer-support">Cancer Support Protocol</a></li>
-            <li><a href="/protocols/immune-boosting">Immune Boosting Protocol</a></li>
-            <li><a href="/protocols/detox-support">Detox Support</a></li>
-            <li><a href="/protocols/daily-wellness">Daily Wellness Protocol</a></li>
-            <!-- Add more links as you create them -->
-        </ul>
-    </section>
+    <ul>
+      <li><a href="/protocols/cancer-support">Cancer Support Protocol</a></li>
+      <li><a href="/protocols/immune-boosting">Immune Boosting Protocol</a></li>
+      <li><a href="/protocols/detox-support">Detox Support</a></li>
+      <li><a href="/protocols/autoimmuneprotocol" class="protocol-link">
+          Autoimmune Protocol – Raindrop Technique & Essential Oils</a></li>
+      <li><a href="/protocols/daily-wellness">Daily Wellness Protocol</a></li>
+      <!-- Add more links as you create them -->
+    </ul>  
+  </section>
 </Layout>
+    <style>
+        .protocol-link {
+        color: #004080;
+        text-decoration: none;
+        }
+        .protocol-link:hover {
+        text-decoration: underline;
+        }
+    </style>
