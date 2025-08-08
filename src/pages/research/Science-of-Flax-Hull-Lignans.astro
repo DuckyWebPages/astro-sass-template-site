@@ -135,13 +135,17 @@ import Layout from '../../layouts/Layout.astro';
   }
   .info-box p { margin: 0 0 0.85rem 0; }
 </style>
-
   <!-- Testimonials -->
   <h2>HIV & AIDS Research & Testimonials</h2>
   <div class="testimonials">
-    <div class="testimonial" style="text-align: left;">
+    <div class="testimonial">
       <h3>Karen – AIDS, USA</h3>
-      <p>When found in March 2004, Karen was bedridden in hospice care. Doctors had given up hope. Within weeks of starting the flax lignan program, she was walking, unloading trucks, and living independently. Her viral load dropped to non-detectable, she regained her strength, and eventually got married with a new lease on life.</p>
+      <p>
+        When found in March 2004, Karen was bedridden in hospice care. Doctors had given up hope. 
+        Within weeks of starting the flax lignan program, she was walking, unloading trucks, and 
+        living independently. Her viral load dropped to non-detectable, she regained her strength, 
+        and eventually got married with a new lease on life.
+      </p>
     </div>
 
     <div class="testimonial">
@@ -156,68 +160,18 @@ import Layout from '../../layouts/Layout.astro';
     </div>
   </div>
 
-  <!-- FAQ -->
-  <h2>Frequently Asked Questions</h2>
-  <dl>
-    <dt>1. What are flax lignans?</dt>
-    <dd>Lignans are phytonutrients in plants—flaxseed is the richest known source, with up to 800x more than other plants. They are known to boost immunity and have anti-cancer, anti-viral, and antioxidant effects.</dd>
-    <dt>2. Can’t I just grind flax seeds?</dt>
-    <dd>No. Ground flax seeds go rancid quickly and only offer a fraction of the benefit. The concentrated lignans we use are shelf-stable and provide the equivalent benefit of 70 teaspoons of flaxseed in just one teaspoon. (We recommend only using FlaxLignanHealth.com or North Dakota Innovations)</dd>
-    <dt>3. What about flax oil with lignans?</dt>
-    <dd>Flax oil contains almost no lignans and lacks digestive co-factors. It's useful for fatty acids but not lignan content.</dd>
-    <dt>4. Does heat destroy lignans?</dt>
-    <dd>Enzymes may be killed, but the immunity-boosting benefits remain. Great for baking.</dd>
-    <dt>5. Are flax lignans safe?</dt>
-    <dd>Yes, for most healthy individuals. Those with hormone-related conditions or pregnant/nursing women should consult a doctor.</dd>
-    <dt>6. What other nutrients are in flax lignans?</dt>
-    <dd>Each scoop (½ tbsp) contains 2.15g dietary fiber and 1.4g protein.</dd>
-    <dt>7. Can someone with breast cancer take flax lignans?</dt>
-    <dd>See our breast cancer research links above and consult your doctor. Many studies show potential benefits, but individual research is encouraged.</dd>
-  </dl>
-
   <style>
-    .africa-pdfs-row {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-      margin-top: 20px;
+    .testimonials {
+      text-align: left; /* ensures whole section aligns left */
     }
-    .africa-pdfs-col.pdfs {
-      flex: 2;
-      min-width: 0;
+    .testimonial {
+      text-align: left; /* makes each testimonial's text align left */
     }
-    .africa-pdfs-col.imagebox {
-      flex: 1;
-      border: 2px solid #ddd;
-      background: #f9f9f9;
-      padding: 10px;
-      border-radius: 8px;
-      text-align: center;
+    .testimonial h3 {
+      margin-top: 0.5rem;
     }
-    .africa-image {
-      max-width: 100%;
-      height: auto;
-      border-radius: 6px;
+    .testimonial p,
+    .testimonial ul {
+      margin: 0.5rem 0 1rem 0;
     }
-    .africa-caption {
-      font-size: 0.9rem;
-      margin-top: 8px;
-      color: #444;
-    }
-    @media (max-width: 900px) {
-      .africa-pdfs-row {
-        flex-direction: column;
-      }
-      .africa-pdfs-col.imagebox {
-        order: 2;
-      }
-    }
-    <style>
-
-    /* FIX for Karen's text */
-  .testimonials,
-  .testimonials .testimonial {
-    text-align: left !important;
-  }
-</style>
-
+  </style>
