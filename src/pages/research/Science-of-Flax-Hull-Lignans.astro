@@ -79,17 +79,13 @@ import Layout from '../../layouts/Layout.astro';
 
   <h2>HIV &amp; AIDS Research &amp; Testimonials</h2>
   <div class="testimonials">
-    <div class="testimonial">
-      <h3>Karen – AIDS, USA</h3>
-      <p>
-        When found in March 2004, Karen was bedridden in hospice care. Doctors had given up hope.
-        Within weeks of starting the flax lignan program, she was walking, unloading trucks, and
-        living independently. Her viral load dropped to non-detectable, she regained her strength,
-        and eventually got married with a new lease on life.
-      </p>
-    </div>
 
-    <div class="testimonial">
+    <section class="testimonial">
+      <h3>Karen – AIDS, USA</h3>
+      <p>When found in March 2004, Karen was bedridden in hospice care. Doctors had given up hope. Within weeks of starting the flax lignan program, she was walking, unloading trucks, and living independently. Her viral load dropped to non-detectable, she regained her strength, and eventually got married with a new lease on life.</p>
+    </section>
+
+    <section class="testimonial">
       <h3>Alan – HIV Positive, Georgia</h3>
       <ul>
         <li><strong>Before flax:</strong> Viral Load = 135,000, CD4 = 220</li>
@@ -98,34 +94,32 @@ import Layout from '../../layouts/Layout.astro';
         <li><strong>60 Days:</strong> VL non-detectable, highest T-cell count.</li>
         <li><strong>90 Days:</strong> Still non-detectable.</li>
       </ul>
-    </div>
+    </section>
 
-    <!-- New testimonials -->
-    <div class="testimonial">
-      <p><strong>Tom / Heart Problems / USA</strong><br>
-      Patient had suffered a heart attack and had triple bypass surgery. Participated in trial by taking flax hull lignans and reports a marked decrease in pain. Reports a drop in cholesterol by 30 points and has required a decrease in blood pressure medication. All coronary arteries remain free of any blockage.<br>
-      <em>Submitted by: M. Whaley, RN</em></p>
-    </div>
+    <section class="testimonial">
+      <h3>Tom – Heart Problems, USA</h3>
+      <p>Patient had suffered a heart attack and had triple bypass surgery. Participated in trial by taking flax hull lignans and reports a marked decrease in pain. Reports a drop in cholesterol by 30 points and has required a decrease in blood pressure medication. All coronary arteries remain free of any blockage.</p>
+      <p class="submitted">Submitted by: M. Whaley, RN</p>
+    </section>
 
-    <div class="testimonial">
-      <p><strong>Alan / HIV Positive / Fayetteville, GA USA</strong><br>
-      HIV Viral Load before flax lignans: 135,000<br>
-      HIV Viral load after flax lignans: Undetectable<br>
-      CD4 count before: 220 T-cell<br>
-      CD4 count after: 470</p>
+    <section class="testimonial">
+      <h3>Alan – HIV Positive, Fayetteville, GA USA</h3>
       <ul>
-        <li><strong>30 Days</strong> – More energy and better appetite. Able to rake leaves using less Ativan.</li>
-        <li><strong>60 Days</strong> – VL nondetectable, T-cells up 470; highest to date.</li>
-        <li><strong>90 Days</strong> – Continues with non-detectable VL. Feeling good. Status: will continue taking flax.</li>
+        <li><strong>Before flax lignans:</strong> Viral Load = 135,000, CD4 = 220</li>
+        <li><strong>After flax lignans:</strong> Viral Load = Undetectable, CD4 = 470</li>
+        <li><strong>30 Days:</strong> More energy and better appetite. Able to rake leaves using less Ativan.</li>
+        <li><strong>60 Days:</strong> VL non-detectable, T-cells up 470; highest to date.</li>
+        <li><strong>90 Days:</strong> Continues with non-detectable VL. Feeling good. Status: will continue taking flax.</li>
       </ul>
-      <p><em>Submitted by: M. Whaley, RN</em></p>
-    </div>
+      <p class="submitted">Submitted by: M. Whaley, RN</p>
+    </section>
 
-    <div class="testimonial">
-      <p><strong>Melinda / Invasive Ductal Carcinoma - Right Breast / Charlottesville, VA USA</strong><br>
-      Lumpectomy 11/02. 2nd lump in same breast 2/03. Lumpectomy 3/03. Nodes removed believed to be cancer free, but closer exam revealed tumors. Has not done resection of nodes. Did flax program and tumors disappeared. No chemo. No radiation.<br>
-      7/06 – Continued to be cancer free and stopped taking flax. A year after the program ended, her tumors reappeared. Started back on flax and tumors are once again gone.</p>
-    </div>
+    <section class="testimonial">
+      <h3>Melinda – Invasive Ductal Carcinoma (Right Breast), Charlottesville, VA USA</h3>
+      <p>Lumpectomy 11/02. Second lump in same breast 2/03. Lumpectomy 3/03. Nodes removed believed to be cancer free, but closer exam revealed tumors. Has not done resection of nodes. Did flax program and tumors disappeared. No chemo. No radiation.</p>
+      <p>7/06 – Continued to be cancer free and stopped taking flax. A year after the program ended, her tumors reappeared. Started back on flax and tumors are once again gone.</p>
+    </section>
+
   </div>
 
   <h2>Frequently Asked Questions</h2>
@@ -193,15 +187,12 @@ import Layout from '../../layouts/Layout.astro';
       .africa-pdfs-col.imagebox { order: 2; }
     }
 
-    .testimonials { text-align: left; }
-    .testimonial { margin: 0 0 1rem 0; }
-    .testimonial h3 { margin: .5rem 0 .25rem 0; }
-    .testimonial p { margin: 0 0 .5rem 0; }
-    .testimonial ul {
-      margin: .25rem 0 1rem 0;
-      padding-left: 1.25rem;
-      list-style-position: outside;
-    }
-    .testimonial li { margin: .25rem 0; line-height: 1.6; }
+    .testimonials { text-align: left; font-family: inherit; color: inherit; line-height: 1.6; }
+    .testimonial { margin: 0 0 2rem 0; }
+    .testimonial h3 { font-size: 1.2rem; color: #003366; margin: .5rem 0 .5rem 0; }
+    .testimonial p { margin: 0.5rem 0; }
+    .testimonial ul { list-style-type: disc; margin: .25rem 0 1rem 1.5rem; padding: 0; }
+    .testimonial li { margin: .25rem 0; }
+    .submitted { font-style: italic; font-size: 0.9rem; color: #555; }
   </style>
 </Layout>
