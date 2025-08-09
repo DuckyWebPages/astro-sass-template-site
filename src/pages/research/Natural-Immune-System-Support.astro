@@ -8,81 +8,109 @@ import Layout from '../../layouts/Layout.astro';
     <p><strong>Your immune system</strong> is your body’s defense force — a 24/7 network that fights off viruses, bacteria, and toxins. Our passion for strengthening it began over 20 years ago in Third World countries, where medicine was scarce and lives were on the line. Out of necessity, we searched for natural, effective ways to help the body protect itself. Along the way, we partnered with medical doctors, naturopaths, functional medicine doctors, physical therapists, chiropractors, and other health professionals — combining knowledge, research, and hands-on experience to find lasting ways to improve people’s health. These solutions still guide our work today.</p>
   </section>
 
-  <!-- Four Pillars -->
-  <div class="grid">
-    <section class="card">
-      <h2>Cleansing (Detoxification)</h2>
-      <p>Cleansing supports your body’s elimination of metabolic waste and environmental toxins that can burden immune function.</p>
-      <ul class="bullets">
-        <li>May reduce inflammation burden and improve energy.</li>
-        <li>Supports organs of elimination (liver, kidneys, gut, skin).</li>
-      </ul>
-      <p class="ref">
-        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6163475/" target="_blank" rel="noopener noreferrer">Research: Environmental chemicals &amp; chronic disease (review)</a>
-      </p>
-    </section>
+  <!-- Asymmetric two-column layout:
+       Left = Liver Support (single card)
+       Right = other cards stacked -->
+  <div class="asym-grid">
+    <div class="left-col">
+      <!-- LIVER SUPPORT CARD WITH UPDATED PARAGRAPH + RESEARCH LIST (LEFT-ALIGNED) -->
+      <section class="card">
+  <h2>Liver Support</h2>
+  <p>The liver is the body’s primary detox organ, central to immune signaling and antigen clearance.</p>
+  <ul class="bullets">
+    <li>Processes xenobiotics, hormones, and inflammatory byproducts.</li>
+    <li>Healthy liver function correlates with resilient immunity.</li>
+  </ul>
 
-    <!-- LIVER SUPPORT CARD WITH UPDATED PARAGRAPH + RESEARCH LIST (LEFT-ALIGNED) -->
-    <section class="card">
-      <h2>Liver Support</h2>
-      <p>The liver is the body’s primary detox organ, central to immune signaling and antigen clearance.</p>
-      <ul class="bullets">
-        <li>Processes xenobiotics, hormones, and inflammatory byproducts.</li>
-        <li>Healthy liver function correlates with resilient immunity.</li>
-      </ul>
-      <p class="ref">
-        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7144559/" target="_blank" rel="noopener noreferrer">Research: Liver–immune system interactions (review)</a>
-      </p>
+  <h3>Key Liver-Supporting Nutrients with Strong Evidence</h3>
+  <ul class="bullets">
+    <li><strong>Curcumin</strong> (from turmeric) — antioxidant and anti-inflammatory actions; researched in NAFLD/NASH contexts <sup>11</sup>. <a href="https://pubmed.ncbi.nlm.nih.gov/29151096/" target="_blank" rel="noopener noreferrer">Study</a></li>
+    <li><strong>Green Tea Catechins</strong> — EGCG and related catechins studied for liver fat and inflammation modulation <sup>9</sup>. <a href="https://pubmed.ncbi.nlm.nih.gov/24366029/" target="_blank" rel="noopener noreferrer">Study</a></li>
+    <li><strong>Dandelion Root</strong> — traditional choleretic; emerging data on hepatoprotective effects <sup>10</sup>. <a href="https://pubmed.ncbi.nlm.nih.gov/19919579/" target="_blank" rel="noopener noreferrer">Study</a></li>
+    <li><strong>Milk Thistle</strong> (silymarin) — long-studied hepatoprotective complex with antioxidant activity <sup>8</sup>. <a href="https://pubmed.ncbi.nlm.nih.gov/21334871/" target="_blank" rel="noopener noreferrer">Study</a></li>
+  </ul>
 
-      <!-- Updated paragraph and citations -->
-     <div class="info-box">
-  <h3>Liver Support</h3>
-  <p>
-    The liver is your body’s main detox powerhouse — filtering blood, metabolizing nutrients, and neutralizing toxins. Cleansing (as described before) helps reduce the toxic load on this vital organ, but cleansing alone is not enough. To truly support the liver, it must also be nourished with the nutrients it needs to repair, regenerate, and operate its many functions at peak efficiency. Supplying the liver with targeted vitamins, minerals, and plant compounds — with specific foods, teas, and powerful antioxidants (as found in fruits like wolfberries) — has been shown in scientific studies to provide liver-protective effects<sup>1-3</sup>, improve antioxidant status<sup>4,5</sup>, and reduce oxidative stress<sup>6,7</sup>.  
-    In addition to nutrient-rich fruits, certain herbal teas have also demonstrated strong liver-supportive properties. Milk thistle tea, rich in silymarin, has been shown to protect liver cells and promote regeneration<sup>8</sup>. Green tea catechins have demonstrated antioxidant and anti-inflammatory benefits for the liver<sup>9</sup>, while dandelion root tea supports bile production and overall liver detoxification<sup>10</sup>.
-  </p>
-  <p class="citation">
-    1. <a href="https://www.sciencedirect.com/science/article/pii/S2212958822000714" target="_blank">Wolfberry liver protective study</a><br>
-    2. <a href="https://www.liebertpub.com/doi/abs/10.1089/jmf.2005.8.41" target="_blank">Wolfberry polysaccharide antioxidant effects</a><br>
-    3. <a href="https://pubs.acs.org/doi/abs/10.1021/jf0113833" target="_blank">Wolfberry flavonoids and liver protection</a><br>
-    4. <a href="https://www.semanticscholar.org/paper/Antioxidant-intake-and-risk-of-incident-age-related-Lyle-Mares-Perlman/af6bcafb3643506480d79bf646768d62a2d0479c" target="_blank">Antioxidant intake and health outcomes</a><br>
-    5. <a href="https://jamanetwork.com/journals/jamaophthalmology/fullarticle/417829" target="_blank">Antioxidants and oxidative stress</a><br>
-    6. <a href="https://link.springer.com/article/10.1631/jzus.B1100137" target="_blank">Wolfberry bioactive compounds</a><br>
-    7. <a href="https://pubmed.ncbi.nlm.nih.gov/15857208/" target="_blank">Wolfberry and oxidative stress reduction</a><br>
-    8. <a href="https://pubmed.ncbi.nlm.nih.gov/21334871/" target="_blank">Milk thistle (silymarin) and liver regeneration</a><br>
-    9. <a href="https://pubmed.ncbi.nlm.nih.gov/24366029/" target="_blank">Green tea catechins and liver protection</a><br>
-    10. <a href="https://pubmed.ncbi.nlm.nih.gov/19919579/" target="_blank">Dandelion root extract and liver detoxification</a>
-  </p>
-</div>
+  <h4 style="font-size: 1rem; margin-top: 1rem;">Other Liver Supporting Research Worth Mentioning</h4>
+  <ul class="bullets">
+    <li><strong>Vitamin E</strong> — RCTs in non-diabetic NASH; pediatric benefit in TONIC trial <sup>12</sup>. <a href="https://pubmed.ncbi.nlm.nih.gov/20427778/" target="_blank" rel="noopener noreferrer">Study</a></li>
+    <li><strong>Coffee</strong> — meta-analyses associate intake with lower fibrosis risk and improved outcomes in chronic liver disease <sup>13</sup>. <a href="https://pubmed.ncbi.nlm.nih.gov/28699464/" target="_blank" rel="noopener noreferrer">Study</a></li>
+    <li><strong>Omega-3 fatty acids</strong> (n-3 PUFAs) — trials show liver fat reduction and lipid improvements in NAFLD <sup>14</sup>. <a href="https://pubmed.ncbi.nlm.nih.gov/29191773/" target="_blank" rel="noopener noreferrer">Study</a></li>
+    <li><strong>Artichoke Leaf Extract</strong> — RCTs: reductions in ALT/AST and ultrasound markers of fatty liver <sup>15</sup>. <a href="https://pubmed.ncbi.nlm.nih.gov/26196153/" target="_blank" rel="noopener noreferrer">Study</a></li>
+    <li><strong>N-acetylcysteine (NAC)</strong> — studied for oxidative stress reduction and transaminase improvements <sup>16</sup>. <a href="https://pubmed.ncbi.nlm.nih.gov/24206429/" target="_blank" rel="noopener noreferrer">Study</a></li>
+  </ul>
 
-    </section>
+  <div class="info-box">
+    <h3>Liver Support</h3>
+    <p>
+      The liver is your body’s main detox powerhouse — filtering blood, metabolizing nutrients, and neutralizing toxins. Cleansing (as described before) helps reduce the toxic load on this vital organ, but cleansing alone is not enough. To truly support the liver, it must also be nourished with the nutrients it needs to repair, regenerate, and operate its many functions at peak efficiency. Supplying the liver with targeted vitamins, minerals, and plant compounds — with specific foods, teas, and powerful antioxidants (as found in fruits like wolfberries) — has been shown in scientific studies to provide liver-protective effects<sup>1-3</sup>, improve antioxidant status<sup>4,5</sup>, and reduce oxidative stress<sup>6,7</sup>.  
+      In addition to nutrient-rich fruits, certain herbal teas have also demonstrated strong liver-supportive properties. Milk thistle tea, rich in silymarin, has been shown to protect liver cells and promote regeneration<sup>8</sup>. Green tea catechins have demonstrated antioxidant and anti-inflammatory benefits for the liver<sup>9</sup>, while dandelion root tea supports bile production and overall liver detoxification<sup>10</sup>.
+    </p>
+    <p class="citation">
+      1. <a href="https://www.sciencedirect.com/science/article/pii/S2212958822000714" target="_blank">Wolfberry liver protective study</a><br>
+      2. <a href="https://www.liebertpub.com/doi/abs/10.1089/jmf.2005.8.41" target="_blank">Wolfberry polysaccharide antioxidant effects</a><br>
+      3. <a href="https://pubs.acs.org/doi/abs/10.1021/jf0113833" target="_blank">Wolfberry flavonoids and liver protection</a><br>
+      4. <a href="https://www.semanticscholar.org/paper/Antioxidant-intake-and-risk-of-incident-age-related-Lyle-Mares-Perlman/af6bcafb3643506480d79bf646768d62a2d0479c" target="_blank">Antioxidant intake and health outcomes</a><br>
+      5. <a href="https://jamanetwork.com/journals/jamaophthalmology/fullarticle/417829" target="_blank">Antioxidants and oxidative stress</a><br>
+      6. <a href="https://link.springer.com/article/10.1631/jzus.B1100137" target="_blank">Wolfberry bioactive compounds</a><br>
+      7. <a href="https://pubmed.ncbi.nlm.nih.gov/15857208/" target="_blank">Wolfberry and oxidative stress reduction</a><br>
+      8. <a href="https://pubmed.ncbi.nlm.nih.gov/21334871/" target="_blank">Milk thistle (silymarin) and liver regeneration</a><br>
+      9. <a href="https://pubmed.ncbi.nlm.nih.gov/24366029/" target="_blank">Green tea catechins and liver protection</a><br>
+      10. <a href="https://pubmed.ncbi.nlm.nih.gov/19919579/" target="_blank">Dandelion root extract and liver detoxification</a><br>
+      11. <a href="https://pubmed.ncbi.nlm.nih.gov/29151096/" target="_blank">Curcumin and NAFLD/NASH contexts</a><br>
+      12. <a href="https://pubmed.ncbi.nlm.nih.gov/20427778/" target="_blank">Vitamin E — PIVENS/TONIC trials</a><br>
+      13. <a href="https://pubmed.ncbi.nlm.nih.gov/28699464/" target="_blank">Coffee and liver fibrosis meta-analysis</a><br>
+      14. <a href="https://pubmed.ncbi.nlm.nih.gov/29191773/" target="_blank">Omega-3 fatty acids and NAFLD</a><br>
+      15. <a href="https://pubmed.ncbi.nlm.nih.gov/26196153/" target="_blank">Artichoke Leaf Extract — liver enzymes</a><br>
+      16. <a href="https://pubmed.ncbi.nlm.nih.gov/24206429/" target="_blank">N-acetylcysteine — oxidative stress and liver</a>
+    </p>
+  </div>
+</section>
 
-    <section class="card">
-      <h2>Antioxidants</h2>
-      <p>Antioxidants protect cells from oxidative stress and lipid peroxidation — processes linked to immune dysfunction and chronic disease.</p>
-      <ul class="bullets">
-        <li>Dietary antioxidants help neutralize excess free radicals.</li>
-        <li>Associated with reduced risk of cardiometabolic and neurodegenerative disease.</li>
-      </ul>
-      <p class="ref">
-        <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3249911/" target="_blank" rel="noopener noreferrer">Research: Oxidative stress, antioxidants &amp; disease (review)</a>
-      </p>
-    </section>
+    </div>
 
-    <section class="card">
-      <h2>Essential Nutrients</h2>
-      <p>Immune cells require steady supplies of vitamins, minerals, amino acids, and healthy fats. Even mild deficiencies can impair defenses.</p>
-      <ul class="bullets">
-        <li>Targeted nutrient testing can reveal hidden gaps.</li>
-        <li>Correcting deficiencies improves immune competence.</li>
-      </ul>
-      <p class="ref">
-        <a href="https://www.frontiersin.org/articles/10.3389/fimmu.2018.03160/full" target="_blank" rel="noopener noreferrer">Frontiers: Immunity &amp; micronutrients (review)</a> ·
-        <a href="https://ods.od.nih.gov/factsheets/VitaminD-Consumer/" target="_blank" rel="noopener noreferrer">NIH ODS: Vitamin D</a> ·
-        <a href="https://ods.od.nih.gov/factsheets/VitaminC-Consumer/" target="_blank" rel="noopener noreferrer">NIH ODS: Vitamin C</a> ·
-        <a href="https://ods.od.nih.gov/factsheets/Zinc-Consumer/" target="_blank" rel="noopener noreferrer">NIH ODS: Zinc</a>
-      </p>
-    </section>
+    <div class="right-col">
+      <!-- Cleansing (Detoxification) -->
+      <section class="card">
+        <h2>Cleansing (Detoxification)</h2>
+        <p>Cleansing supports your body’s elimination of metabolic waste and environmental toxins that can burden immune function.</p>
+        <ul class="bullets">
+          <li>May reduce inflammation burden and improve energy.</li>
+          <li>Supports organs of elimination (liver, kidneys, gut, skin).</li>
+        </ul>
+        <p class="ref">
+          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6163475/" target="_blank" rel="noopener noreferrer">Research: Environmental chemicals &amp; chronic disease (review)</a>
+        </p>
+      </section>
+
+      <!-- Antioxidants -->
+      <section class="card">
+        <h2>Antioxidants</h2>
+        <p>Antioxidants protect cells from oxidative stress and lipid peroxidation — processes linked to immune dysfunction and chronic disease.</p>
+        <ul class="bullets">
+          <li>Dietary antioxidants help neutralize excess free radicals.</li>
+          <li>Associated with reduced risk of cardiometabolic and neurodegenerative disease.</li>
+        </ul>
+        <p class="ref">
+          <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3249911/" target="_blank" rel="noopener noreferrer">Research: Oxidative stress, antioxidants &amp; disease (review)</a>
+        </p>
+      </section>
+
+      <!-- Essential Nutrients -->
+      <section class="card">
+        <h2>Essential Nutrients</h2>
+        <p>Immune cells require steady supplies of vitamins, minerals, amino acids, and healthy fats. Even mild deficiencies can impair defenses.</p>
+        <ul class="bullets">
+          <li>Targeted nutrient testing can reveal hidden gaps.</li>
+          <li>Correcting deficiencies improves immune competence.</li>
+        </ul>
+        <p class="ref">
+          <a href="https://www.frontiersin.org/articles/10.3389/fimmu.2018.03160/full" target="_blank" rel="noopener noreferrer">Frontiers: Immunity &amp; micronutrients (review)</a> ·
+          <a href="https://ods.od.nih.gov/factsheets/VitaminD-Consumer/" target="_blank" rel="noopener noreferrer">NIH ODS: Vitamin D</a> ·
+          <a href="https://ods.od.nih.gov/factsheets/VitaminC-Consumer/" target="_blank" rel="noopener noreferrer">NIH ODS: Vitamin C</a> ·
+          <a href="https://ods.od.nih.gov/factsheets/Zinc-Consumer/" target="_blank" rel="noopener noreferrer">NIH ODS: Zinc</a>
+        </p>
+      </section>
+    </div>
   </div>
 
   <!-- Root Cause (centered) -->
@@ -163,14 +191,24 @@ import Layout from '../../layouts/Layout.astro';
       box-shadow: 0 2px 6px rgba(0,0,0,.08);
     }
 
-    /* Cards grid */
-    .grid {
+    /* NEW: Asymmetric two-column grid */
+    .asym-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
+      grid-template-columns: 1.15fr 1fr; /* left slightly wider */
       gap: 20px;
+      align-items: start;
       margin-bottom: 2rem;
     }
-    @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+    .left-col .card { height: 100%; }
+    .right-col > .card + .card { margin-top: 20px; } /* stack spacing on right */
+
+    /* Fallback to single column on narrow screens */
+    @media (max-width: 900px) {
+      .asym-grid { grid-template-columns: 1fr; }
+      .right-col > .card + .card { margin-top: 16px; }
+    }
+
+    /* Card visuals */
     .card {
       background: #ffffff;
       border: 1px solid #e6eef7;
@@ -225,7 +263,7 @@ import Layout from '../../layouts/Layout.astro';
       gap: 20px;
       margin-top: .75rem;
       margin-bottom: .75rem;
-      text-align: left; /* keep inner columns readable even when parent is centered */
+      text-align: left;
     }
     @media (max-width: 900px) { .grid-2 { grid-template-columns: 1fr; } }
     .grid-2 h3 { margin: .25rem 0 .25rem 0; color: #003366; }
