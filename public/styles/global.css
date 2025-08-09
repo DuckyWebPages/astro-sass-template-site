@@ -147,6 +147,26 @@ blockquote {
   background-color: #0059b3;
 }
 
+.dropdown-container:hover .dropdown-menu {
+  display: block;
+
+}.dropdown-menu a:hover {
+  background-color: #0059b3;
+}
+
+/* Make dropdown appear on hover (desktop) and when .open class is added (mobile click) */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+
+.dropdown.open .dropdown-menu,
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
 .testimonial {
   text-align: left;
 }
