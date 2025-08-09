@@ -152,6 +152,17 @@ const { title } = Astro.props;
         const dropdown = document.querySelector('.mobile-dropdown');
         dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
       }
+
+      .site-disclaimer {
+  font-size: 0.85rem;
+  color: #555;
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+  padding: 1rem 1.25rem;
+  margin-top: 2rem;
+  line-height: 1.5;
+}
+
     </script>
   </head>
 
@@ -223,11 +234,20 @@ const { title } = Astro.props;
 
     <main>
       <slot />
+
     </main>
 
     <footer>
       <hr />
       <p style="text-align: center;">© {new Date().getFullYear()} A.R.A.I.</p>
+      <footer>
+  <!-- Existing footer content here -->
+
+  <div class="site-disclaimer">
+    <p><strong>Disclaimer:</strong> This website is operated by a non-profit organization and is for educational and informational purposes only. We are not physicians, and the information provided here is not intended as medical advice, diagnosis, or treatment. Nothing on this site should be construed as a substitute for professional medical guidance. We encourage you to share any research, protocols, or information found here with your qualified healthcare provider to determine how it may or may not apply to your personal situation. Everyone’s health circumstances are unique — always consult your own physician or other qualified healthcare professional regarding any medical questions or concerns. By using this site, you agree that you do so at your own discretion and risk.</p>
+  </div>
+</footer>
+
     </footer>
   </body>
 </html>
