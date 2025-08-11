@@ -7,106 +7,54 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <link rel="stylesheet" href="/styles/global.css" />
+    <!-- TEMP: remove global.css while debugging -->
     <style>
       :root { --brand:#003366; }
       * { box-sizing: border-box; }
-      html, body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+      html, body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+      body { color:#111 !important; background:#fff; }
 
-      /* NAV WRAPPER */
-      nav {
-        background: var(--brand);
-        color: #fff;
-        position: sticky;
-        top: 0;
-        z-index: 50;
-      }
-      .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0.75rem 1rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-      }
-
+      /* NAV */
+      nav { background: var(--brand); color:#fff; position: sticky; top:0; z-index:50; }
+      .nav-container { max-width:1200px; margin:0 auto; padding:.75rem 1rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
       .brand a { color:#fff; text-decoration:none; font-weight:700; letter-spacing:.3px; }
 
-      /* DESKTOP LINKS */
-      .links { display: none; align-items: center; gap: .25rem; }
-      .links > li { list-style:none; position: relative; }
-      .link, .menu-button { 
-        display: inline-flex; align-items:center; gap:.35rem;
-        color:#fff; text-decoration:none; font-weight:500; padding:.5rem .65rem; border-radius:.5rem;
-      }
+      .links { display:none; align-items:center; gap:.25rem; }
+      .links > li { list-style:none; position:relative; }
+      .link, .menu-button { display:inline-flex; align-items:center; gap:.35rem; color:#fff; text-decoration:none; font-weight:500; padding:.5rem .65rem; border-radius:.5rem; }
       .link:hover, .menu-button:hover { background: rgba(255,255,255,.12); }
-
-      /* SINGLE caret */
       .caret { display:inline-block; transition: transform .2s ease; }
       .menu-button[aria-expanded="true"] .caret { transform: rotate(180deg); }
 
-      /* DROPDOWN (desktop hover/focus) */
-      .menu { position:absolute; left:0; top:calc(100% + .25rem); background:#fff; color:#111; min-width: 220px; border-radius:.75rem; padding:.35rem; box-shadow: 0 10px 25px rgba(0,0,0,.18); display:none; }
+      .menu { position:absolute; left:0; top:calc(100% + .25rem); background:#fff; color:#111; min-width:220px; border-radius:.75rem; padding:.35rem; box-shadow:0 10px 25px rgba(0,0,0,.18); display:none; }
       .menu a { display:block; padding:.5rem .65rem; border-radius:.5rem; color:#111; text-decoration:none; font-weight:500; }
       .menu a:hover { background:#f3f4f6; }
-      /* show on hover for desktop */
       @media (hover:hover) { .links > li:focus-within .menu, .links > li:hover .menu { display:block; } }
 
-      /* MOBILE TOGGLE */
-      .mobile-toggle { display: inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:1px solid rgba(255,255,255,.35); border-radius:.65rem; background:transparent; color:#fff; }
-      .mobile-toggle:focus { outline: 2px solid #fff; outline-offset:2px; }
-
-      /* MOBILE PANEL */
-      .mobile-panel {
-        position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 40; display:none; /* hidden by default */
-      }
-      .mobile-sheet {
-        position: absolute; right:0; top:0; height:100%; width:min(92vw, 360px); background:#fff; color:#111; padding:1rem; overflow:auto; box-shadow: -10px 0 25px rgba(0,0,0,.25);
-      }
-      .mobile-header { display:flex; align-items:center; justify-content:space-between; gap:.5rem; margin-bottom:.5rem; }
-      .mobile-close { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:.5rem; border:1px solid #e5e7eb; background:#fff; }
-
-      .m-list { display:flex; flex-direction:column; gap:.25rem; margin:.5rem 0 1rem; padding:0; }
-      .m-list li { list-style:none; }
-      .m-link, .m-button { display:flex; align-items:center; justify-content:space-between; width:100%; padding:.75rem .9rem; border-radius:.65rem; text-decoration:none; font-weight:600; }
-      .m-link { color:#111; background:#f8fafc; }
-      .m-link:active { background:#eef2f7; }
-      .m-button { background:#f1f5f9; color:#111; }
-
-      .m-submenu { display:none; padding-left:.5rem; }
-      .m-submenu a { display:block; padding:.6rem .75rem; border-radius:.5rem; color:#111; text-decoration:none; }
-      .m-submenu a:hover { background:#f3f4f6; }
-
-      /* STATES */
+      .mobile-toggle { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:1px solid rgba(255,255,255,.35); border-radius:.65rem; background:transparent; color:#fff; }
+      .mobile-panel { position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:40; display:none; }
+      .mobile-sheet { position:absolute; right:0; top:0; height:100%; width:min(92vw,360px); background:#fff; color:#111; padding:1rem; overflow:auto; box-shadow:-10px 0 25px rgba(0,0,0,.25); }
       .mobile-panel[data-open="true"] { display:block; }
-      .m-button[aria-expanded="true"] .caret { transform: rotate(180deg); }
-      .m-button[aria-expanded="true"] + .m-submenu { display:block; }
 
-      /* BREAKPOINTS */
-      @media (min-width: 980px) {
-        .mobile-toggle { display:none; }
-        .links { display:flex; }
-      }
+      /* PAGE CONTENT — FORCE VISIBLE */
+      main { max-width:1200px; margin:1.25rem auto; padding:0 1rem 3rem; min-height:60vh;
+             display:block !important; visibility:visible !important; }
+      .page-container, section { display:block !important; visibility:visible !important; }
+      .debug { padding:12px; margin:8px 0; border:2px dashed #e11; background:#fee; color:#900; font-weight:700; }
 
-      /* PAGE CONTENT */
-      main { max-width: 1200px; margin: 1.25rem auto; padding: 0 1rem 3rem; }
       footer { background:#0b2d5a; color:#cbd5e1; padding:2rem 1rem; }
       footer a { color:#fff; }
+      @media (min-width:980px){ .mobile-toggle{display:none;} .links{display:flex;} }
     </style>
   </head>
   <body>
     <nav>
       <div class="nav-container">
-        <div class="brand"><a href="/">Flax Lignan Health</a></div>
-
-        <!-- Desktop nav -->
+        <div class="brand"><a href="/">A.R.A.I.</a></div>
         <ul class="links" role="menubar" aria-label="Primary">
           <li><a class="link" href="/">Home</a></li>
           <li><a class="link" href="/about/">About</a></li>
           <li><a class="link" href="/research/">Research</a></li>
-
-          <!-- Testimonials: single dropdown/caret -->
           <li>
             <button class="menu-button" aria-expanded="false" aria-haspopup="true" aria-controls="testimonials-menu">
               Testimonials <span class="caret">▾</span>
@@ -116,52 +64,38 @@ const { title } = Astro.props;
               <a role="menuitem" href="/testimonials/practitioners/">Practitioner Feedback</a>
             </div>
           </li>
-
+          <li><a class="link" href="/protocols/">Protocols</a></li>
+          <li><a class="link" href="/health-help/">Health Help</a></li>
+          <li><a class="link" href="/international-help/">International Help</a></li>
           <li><a class="link" href="/contact/">Contact</a></li>
         </ul>
-
-        <!-- Mobile hamburger -->
         <button id="hamburger" class="mobile-toggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">☰</button>
       </div>
     </nav>
 
-    <!-- Mobile slide-over -->
     <div id="mobilePanel" class="mobile-panel" data-open="false" aria-hidden="true">
       <div class="mobile-sheet" role="dialog" aria-modal="true" aria-label="Mobile menu">
-        <div class="mobile-header">
+        <div class="nav-container" style="padding:0;justify-content:space-between;">
           <strong>Menu</strong>
-          <button id="closeMobile" class="mobile-close" aria-label="Close menu">✕</button>
+          <button id="closeMobile" class="mobile-toggle" aria-label="Close menu">✕</button>
         </div>
-        <ul class="m-list">
-          <li><a class="m-link" href="/">Home</a></li>
-          <li><a class="m-link" href="/about/">About</a></li>
-          <li>
-            <button class="m-button" data-target="m-sub-testimonials" aria-expanded="false">Testimonials <span class="caret">▾</span></button>
-            <div id="m-sub-testimonials" class="m-submenu">
-              <a href="/testimonials/clients/">Client Stories</a>
-              <a href="/testimonials/practitioners/">Practitioner Feedback</a>
-            </div>
-          </li>
-          <li><a class="m-link" href="/research/">Research</a></li>
-          <li><a class="m-link" href="/contact/">Contact</a></li>
-        </ul>
       </div>
     </div>
 
     <main>
+      <div class="debug">DEBUG: Layout slot below. If your page content doesn’t appear, it’s not reaching the slot.</div>
       <slot />
     </main>
 
     <footer>
       <div class="nav-container" style="justify-content:space-between;">
-        <div>© {new Date().getFullYear()} Flax Lignan Health</div>
+        <div>© {new Date().getFullYear()} A.R.A.I.</div>
         <div><a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
       </div>
     </footer>
 
     <script>
-      // Desktop dropdown (click to open, click outside to close)
-      (function() {
+      (function () {
         const menuButton = document.querySelector('.menu-button');
         const menu = document.getElementById('testimonials-menu');
         if (menuButton && menu) {
@@ -178,44 +112,20 @@ const { title } = Astro.props;
             }
           });
         }
-
-        // Mobile open/close
         const hamburger = document.getElementById('hamburger');
         const panel = document.getElementById('mobilePanel');
         const closeBtn = document.getElementById('closeMobile');
-        function openPanel() {
-          panel.dataset.open = 'true';
-          panel.setAttribute('aria-hidden', 'false');
-          hamburger.setAttribute('aria-expanded', 'true');
-          // prevent background scroll
-          document.documentElement.style.overflow = 'hidden';
-        }
-        function closePanel() {
-          panel.dataset.open = 'false';
-          panel.setAttribute('aria-hidden', 'true');
-          hamburger.setAttribute('aria-expanded', 'false');
-          document.documentElement.style.overflow = '';
-        }
+        const openPanel = () => { panel.dataset.open='true'; panel.setAttribute('aria-hidden','false'); hamburger.setAttribute('aria-expanded','true'); document.documentElement.style.overflow='hidden'; };
+        const closePanel = () => { panel.dataset.open='false'; panel.setAttribute('aria-hidden','true'); hamburger.setAttribute('aria-expanded','false'); document.documentElement.style.overflow=''; };
         hamburger?.addEventListener('click', openPanel);
         closeBtn?.addEventListener('click', closePanel);
-        panel?.addEventListener('click', (e) => {
-          if (e.target === panel) closePanel();
-        });
-
-        // Mobile submenu toggles
-        document.querySelectorAll('.m-button').forEach(btn => {
-          btn.addEventListener('click', () => {
-            const expanded = btn.getAttribute('aria-expanded') === 'true';
-            // Close any other open submenu for cleanliness
-            document.querySelectorAll('.m-button[aria-expanded="true"]').forEach(other => {
-              if (other !== btn) other.setAttribute('aria-expanded','false');
-            });
-            btn.setAttribute('aria-expanded', String(!expanded));
-          });
-        });
-
-        // Ensure links are clickable: no overlays stay active
+        panel?.addEventListener('click', (e) => { if (e.target === panel) closePanel(); });
         window.addEventListener('pageshow', () => { closePanel(); });
+        // Log whether slot has children:
+        setTimeout(() => {
+          const m = document.querySelector('main');
+          console.log('DEBUG slot content length:', m?.innerText?.trim().length);
+        }, 0);
       })();
     </script>
   </body>
