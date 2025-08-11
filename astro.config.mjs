@@ -9,3 +9,14 @@ export default defineConfig({
     }
   }
 });
+
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["astro/client"]
+  }
+}
+
