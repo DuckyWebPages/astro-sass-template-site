@@ -1,14 +1,5 @@
 {
   "redirects": [
-    { "source": "/research/Essential-oil-research", "destination": "/research/essential-oil-research", "permanent": true },
-    { "source": "/research/Cancer-Research", "destination": "/research/cancer-research", "permanent": true },
-    { "source": "/research/Detoxification-Research", "destination": "/research/detoxification-research", "permanent": true },
-    { "source": "/research/Natural-Immune-System-Support", "destination": "/research/natural-immune-system-support", "permanent": true }
-  ]
-}
-
-{
-  "redirects": [
     { "source": "/research/Essential-oil-research/:path*", "destination": "/research/essential-oil-research/:path*", "permanent": true },
     { "source": "/research/Cancer-Research/:path*", "destination": "/research/cancer-research/:path*", "permanent": true },
     { "source": "/research/Detoxification-Research/:path*", "destination": "/research/detoxification-research/:path*", "permanent": true },
@@ -21,4 +12,3 @@
     { "source": "/research/Autoimmune-Research/:path*", "destination": "/research/autoimmune-research/:path*", "permanent": true }
   ]
 }
-
