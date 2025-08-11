@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    { "source": "/research/Essential-oil-research", "destination": "/research/essential-oil-research", "permanent": true },
+    { "source": "/research/Cancer-Research", "destination": "/research/cancer-research", "permanent": true },
+    { "source": "/research/Detoxification-Research", "destination": "/research/detoxification-research", "permanent": true },
+    { "source": "/research/Natural-Immune-System-Support", "destination": "/research/natural-immune-system-support", "permanent": true }
+  ]
+}
+
+{
+  "redirects": [
+    { "source": "/research/Essential-oil-research/:path*", "destination": "/research/essential-oil-research/:path*", "permanent": true },
+    { "source": "/research/Cancer-Research/:path*", "destination": "/research/cancer-research/:path*", "permanent": true },
+    { "source": "/research/Detoxification-Research/:path*", "destination": "/research/detoxification-research/:path*", "permanent": true },
+    { "source": "/research/Enzyme-Research/:path*", "destination": "/research/enzyme-research/:path*", "permanent": true },
+    { "source": "/research/Natural-Immune-System-Support/:path*", "destination": "/research/natural-immune-system-support/:path*", "permanent": true },
+    { "source": "/research/Longevity-Research/:path*", "destination": "/research/longevity-research/:path*", "permanent": true },
+    { "source": "/research/Science-of-Flax-Hull-Lignans/:path*", "destination": "/research/science-of-flax-hull-lignans/:path*", "permanent": true },
+    { "source": "/research/Vaccine-Detox-Research/:path*", "destination": "/research/vaccine-detox-research/:path*", "permanent": true },
+    { "source": "/research/Zeolite-Research/:path*", "destination": "/research/zeolite-research/:path*", "permanent": true },
+    { "source": "/research/Autoimmune-Research/:path*", "destination": "/research/autoimmune-research/:path*", "permanent": true }
+  ]
+}
+
