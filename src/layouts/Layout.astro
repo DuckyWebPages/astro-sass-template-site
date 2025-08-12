@@ -1,5 +1,5 @@
 ---
-const { title } = Astro.props;
+const { title = "Site" } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -7,44 +7,57 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <!-- TEMP: remove global.css while debugging -->
+
+    <!-- TEMP: keep global.css out until this works -->
     <style>
-      :root { --brand:#003366; }
+      :root { --nav-h: 64px; }
       * { box-sizing: border-box; }
-      html, body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
-      body { color:#111 !important; background:#fff; }
+      body { margin:0; font-family: system-ui, sans-serif; background:#f5f7fb; color:#111; }
 
-      /* NAV */
-      nav { background: var(--brand); color:#fff; position: sticky; top:0; z-index:50; }
-      .nav-container { max-width:1200px; margin:0 auto; padding:.75rem 1rem; display:flex; align-items:center; justify-content:space-between; gap:1rem; }
-      .brand a { color:#fff; text-decoration:none; font-weight:700; letter-spacing:.3px; }
+      /* Top nav */
+      nav { position: fixed; top:0; left:0; right:0; height: var(--nav-h); background:#003366; display:flex; align-items:center; z-index:1000; }
+      .nav-container { max-width:1200px; margin:0 auto; width:100%; padding:0 16px; display:flex; align-items:center; gap:16px; }
+      .brand a { color:#fff; text-decoration:none; font-weight:700; letter-spacing:.5px; }
+      .links { list-style:none; margin:0; padding:0; display:flex; gap:10px; align-items:center; }
+      .links > li { position:relative; }
+      .link, .menu-button { color:#fff; text-decoration:none; padding:8px 10px; font: inherit; background:none; border:0; cursor:pointer; }
+      .link:hover, .menu-button:hover { text-decoration: underline; }
 
-      .links { display:none; align-items:center; gap:.25rem; }
-      .links > li { list-style:none; position:relative; }
-      .link, .menu-button { display:inline-flex; align-items:center; gap:.35rem; color:#fff; text-decoration:none; font-weight:500; padding:.5rem .65rem; border-radius:.5rem; }
-      .link:hover, .menu-button:hover { background: rgba(255,255,255,.12); }
-      .caret { display:inline-block; transition: transform .2s ease; }
-      .menu-button[aria-expanded="true"] .caret { transform: rotate(180deg); }
+      /* Dropdown menu (Testimonials) */
+      .menu { position:absolute; top:100%; left:0; background:#fff; color:#111; border:1px solid #ddd; border-radius:8px; padding:6px; min-width:220px; box-shadow:0 8px 24px rgba(0,0,0,.12); display:none; z-index:1001; }
+      .menu a { display:block; padding:8px 10px; color:#111; text-decoration:none; border-radius:6px; }
+      .menu a:hover { background:#f0f3f8; }
 
-      .menu { position:absolute; left:0; top:calc(100% + .25rem); background:#fff; color:#111; min-width:220px; border-radius:.75rem; padding:.35rem; box-shadow:0 10px 25px rgba(0,0,0,.18); display:none; }
-      .menu a { display:block; padding:.5rem .65rem; border-radius:.5rem; color:#111; text-decoration:none; font-weight:500; }
-      .menu a:hover { background:#f3f4f6; }
-      @media (hover:hover) { .links > li:focus-within .menu, .links > li:hover .menu { display:block; } }
+      /* Mobile */
+      .mobile-toggle { margin-left:auto; color:#fff; background:none; border:0; font-size:22px; line-height:1; display:none; cursor:pointer; }
+      @media (max-width: 840px) {
+        .links { display:none; }
+        .mobile-toggle { display:block; }
+      }
 
-      .mobile-toggle { display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border:1px solid rgba(255,255,255,.35); border-radius:.65rem; background:transparent; color:#fff; }
-      .mobile-panel { position:fixed; inset:0; background:rgba(0,0,0,.4); z-index:40; display:none; }
-      .mobile-sheet { position:absolute; right:0; top:0; height:100%; width:min(92vw,360px); background:#fff; color:#111; padding:1rem; overflow:auto; box-shadow:-10px 0 25px rgba(0,0,0,.25); }
-      .mobile-panel[data-open="true"] { display:block; }
+      /* Mobile panel (fixed sheet) */
+      .mobile-panel {
+        position: fixed; inset: 0; background: rgba(0,0,0,.35);
+        display:none; pointer-events:none; opacity:0;
+        z-index: 1100;
+      }
+      .mobile-panel[data-open="true"] { display:block; pointer-events:auto; opacity:1; }
+      .mobile-sheet {
+        background:#fff; width:min(92vw, 420px); height:100%;
+        margin-left:auto; padding:18px;
+        box-shadow: -8px 0 24px rgba(0,0,0,.2);
+      }
 
-      /* PAGE CONTENT — FORCE VISIBLE */
-      main { max-width:1200px; margin:1.25rem auto; padding:0 1rem 3rem; min-height:60vh;
-             display:block !important; visibility:visible !important; }
-      .page-container, section { display:block !important; visibility:visible !important; }
-      .debug { padding:12px; margin:8px 0; border:2px dashed #e11; background:#fee; color:#900; font-weight:700; }
+      main {
+        padding-top: calc(var(--nav-h) + 16px);
+        max-width:1200px; margin:0 auto;
+        padding-left:16px; padding-right:16px;
+        min-height: 60vh; outline: 2px dashed #9aa; /* diagnostic */
+      }
 
-      footer { background:#0b2d5a; color:#cbd5e1; padding:2rem 1rem; }
-      footer a { color:#fff; }
-      @media (min-width:980px){ .mobile-toggle{display:none;} .links{display:flex;} }
+      footer { padding:24px 0; }
+      footer a { color:#003366; text-decoration:none; }
+      footer a:hover { text-decoration:underline; }
     </style>
   </head>
   <body>
@@ -55,30 +68,34 @@ const { title } = Astro.props;
           <li><a class="link" href="/">Home</a></li>
           <li><a class="link" href="/about/">About</a></li>
           <li><a class="link" href="/research/">Research</a></li>
+
           <li>
             <button class="menu-button" aria-expanded="false" aria-haspopup="true" aria-controls="testimonials-menu">
               Testimonials <span class="caret">▾</span>
             </button>
-            <div id="testimonials-menu" class="menu" role="menu">
+            <div id="testimonials-menu" class="menu" role="menu" aria-hidden="true">
               <a role="menuitem" href="/testimonials/clients/">Client Stories</a>
               <a role="menuitem" href="/testimonials/practitioners/">Practitioner Feedback</a>
             </div>
           </li>
+
           <li><a class="link" href="/protocols/">Protocols</a></li>
           <li><a class="link" href="/health-help/">Health Help</a></li>
           <li><a class="link" href="/international-help/">International Help</a></li>
           <li><a class="link" href="/contact/">Contact</a></li>
         </ul>
+
         <button id="hamburger" class="mobile-toggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Open menu">☰</button>
       </div>
     </nav>
 
     <div id="mobilePanel" class="mobile-panel" data-open="false" aria-hidden="true">
       <div class="mobile-sheet" role="dialog" aria-modal="true" aria-label="Mobile menu">
-        <div class="nav-container" style="padding:0;justify-content:space-between;">
+        <div class="nav-container" style="padding:0; justify-content:space-between;">
           <strong>Menu</strong>
           <button id="closeMobile" class="mobile-toggle" aria-label="Close menu">✕</button>
         </div>
+        <!-- Add mobile links if you want them now -->
       </div>
     </div>
 
@@ -96,22 +113,32 @@ const { title } = Astro.props;
 
     <script>
       (function () {
+        // Dropdown
         const menuButton = document.querySelector('.menu-button');
         const menu = document.getElementById('testimonials-menu');
         if (menuButton && menu) {
+          const closeMenu = () => {
+            menuButton.setAttribute('aria-expanded', 'false');
+            menu.setAttribute('aria-hidden', 'true');
+            menu.style.display = 'none';
+          };
+          const openMenu = () => {
+            menuButton.setAttribute('aria-expanded', 'true');
+            menu.setAttribute('aria-hidden', 'false');
+            menu.style.display = 'block';
+          };
+
           menuButton.addEventListener('click', (e) => {
             const open = menuButton.getAttribute('aria-expanded') === 'true';
-            menuButton.setAttribute('aria-expanded', String(!open));
-            menu.style.display = open ? 'none' : 'block';
+            open ? closeMenu() : openMenu();
             e.stopPropagation();
           });
           document.addEventListener('click', (e) => {
-            if (!menu.contains(e.target) && e.target !== menuButton) {
-              menuButton.setAttribute('aria-expanded', 'false');
-              menu.style.display = 'none';
-            }
+            if (!menu.contains(e.target) && e.target !== menuButton) closeMenu();
           });
         }
+
+        // Mobile panel — use data-open to match CSS
         const hamburger = document.getElementById('hamburger');
         const panel = document.getElementById('mobilePanel');
         const closeBtn = document.getElementById('closeMobile');
@@ -121,6 +148,7 @@ const { title } = Astro.props;
         closeBtn?.addEventListener('click', closePanel);
         panel?.addEventListener('click', (e) => { if (e.target === panel) closePanel(); });
         window.addEventListener('pageshow', () => { closePanel(); });
+
         // Log whether slot has children:
         setTimeout(() => {
           const m = document.querySelector('main');
