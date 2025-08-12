@@ -8,7 +8,8 @@ const { title = "Site" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
 
-    <!-- TEMP: keep global.css out until this works -->
+    <link rel="stylesheet" href="/styles/global.css" />
+
     <style>
       :root { --nav-h: 64px; }
       * { box-sizing: border-box; }
@@ -100,7 +101,7 @@ const { title = "Site" } = Astro.props;
     </div>
 
     <main>
-      <div class="debug">DEBUG: Layout slot below. If your page content doesn’t appear, it’s not reaching the slot.</div>
+      
       <slot />
     </main>
 
